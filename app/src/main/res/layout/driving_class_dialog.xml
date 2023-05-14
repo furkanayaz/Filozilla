@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clDrivingClassRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/linearDrivingClassHolder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/dividerDriverClass"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="150dp"
+            android:background="@drawable/divider_bg" />
+
+        <RadioGroup
+            android:id="@+id/rgDrivingClass"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="13dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp">
+
+            <RadioButton
+                android:id="@+id/rbDrivingClassB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@drawable/rb_selector"
+                android:buttonTint="@color/text_color2"
+                android:fontFamily="@font/sofiaprosemibold"
+                android:gravity="center|end"
+                android:text="@string/driving_license_b"
+                android:textColor="@color/text_color2"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rbDrivingClassC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@drawable/rb_selector"
+                android:buttonTint="@color/text_color2"
+                android:fontFamily="@font/sofiaprosemibold"
+                android:gravity="center|end"
+                android:text="@string/driving_license_c"
+                android:textColor="@color/text_color2"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rbDrivingClassD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@drawable/rb_selector"
+                android:buttonTint="@color/text_color2"
+                android:fontFamily="@font/sofiaprosemibold"
+                android:gravity="center|end"
+                android:text="@string/driving_license_d"
+                android:textColor="@color/text_color2"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rbDrivingClassE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@drawable/rb_selector"
+                android:buttonTint="@color/text_color2"
+                android:fontFamily="@font/sofiaprosemibold"
+                android:gravity="center|end"
+                android:text="@string/driving_license_e"
+                android:textColor="@color/text_color2"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rbDrivingClassUSB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@drawable/rb_selector"
+                android:buttonTint="@color/text_color2"
+                android:fontFamily="@font/sofiaprosemibold"
+                android:gravity="center|end"
+                android:text="@string/driving_license_usb"
+                android:textColor="@color/text_color2"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

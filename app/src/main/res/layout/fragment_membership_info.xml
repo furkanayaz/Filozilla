@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="fragmentMembershipInfoObject"
+            type="com.filozilla.fragments.MembershipInfoFragment" />
+        <variable
+            name="creationDate"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMembershipInfoRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <ScrollView
+            android:id="@+id/svMembershipInfo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/background"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/clMembershipInfoSaveHolder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSvMembershipInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clMembershipInfoTop"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/second_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvMembershipInfoBack"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/sofiaproregular"
+                        android:text="@string/my_profile"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivMembershipInfoBack"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/ivMembershipInfoBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="12dp"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:contentDescription="@string/back"
+                        android:focusable="true"
+                        android:onClick="@{() -> fragmentMembershipInfoObject.backOnClick()}"
+                        android:padding="8dp"
+                        android:rotation="180"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/arrow_right"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clMembershipInfoInfoHolder"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/cl_edit_profile_info_bg"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvMembershipInfoBack">
+
+                        <ImageView
+                            android:id="@+id/ivMembershipInfoInfoIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:contentDescription="@string/icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5"
+                            app:srcCompat="@drawable/warning2" />
+
+                        <TextView
+                            android:id="@+id/tvMembershipInfoInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/sofiaproregular"
+                            android:text="@string/my_membership_info"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/ivMembershipInfoInfoIcon"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clMembershipInfoInfoHolder2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/cl_edit_profile_info_bg"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/clMembershipInfoInfoHolder">
+
+                        <TextView
+                            android:id="@+id/tvMembershipInfoCreationDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/sofiaproregular"
+                            android:text="@string/account_creation_date"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/white"
+                            android:textSize="13sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/tvMembershipInfoUserCreationDate"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5" />
+
+                        <TextView
+                            android:id="@+id/tvMembershipInfoUserCreationDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/sofiaproregular"
+                            android:text="@{creationDate}"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/yellow"
+                            android:textSize="13sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/tvMembershipInfoCreationDate"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearMembershipInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clMembershipInfoTop">
+
+                    <TextView
+                        android:id="@+id/tvMembershipInfoMembershipInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:fontFamily="@font/sofiaprosemibold"
+                        android:text="@string/membership_info"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/etMembershipInfoName"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/et_bg"
+                        android:ems="10"
+                        android:fontFamily="@font/sofiaprolight"
+                        android:hint="@string/enter_name_lastname2"
+                        android:importantForAutofill="no"
+                        android:inputType="textCapWords"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/hint_color"
+                        android:textSize="14sp"
+                        tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
+
+                    <EditText
+                        android:id="@+id/etMembershipInfoDateOfBirth"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/et_bg"
+                        android:ems="10"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:fontFamily="@font/sofiaprolight"
+                        android:hint="@string/enter_date_of_birth"
+                        android:importantForAutofill="no"
+                        android:inputType="date"
+                        android:longClickable="false"
+                        android:onClick="@{() -> fragmentMembershipInfoObject.dateOfBirthOnClick()}"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/hint_color"
+                        android:textSize="14sp"
+                        tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
+
+                    <EditText
+                        android:id="@+id/etMembershipInfoTcknPassport"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/et_bg"
+                        android:ems="10"
+                        android:fontFamily="@font/sofiaprolight"
+                        android:hint="@string/enter_tckn_passport"
+                        android:importantForAutofill="no"
+                        android:inputType="textCapCharacters"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/hint_color"
+                        android:textSize="14sp"
+                        tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
+
+                    <EditText
+                        android:id="@+id/etMembershipInfoEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/et_bg"
+                        android:ems="10"
+                        android:focusableInTouchMode="false"
+                        android:fontFamily="@font/sofiaprolight"
+                        android:hint="@string/enter_email"
+                        android:importantForAutofill="no"
+                        android:inputType="textWebEmailAddress"
+                        android:longClickable="false"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:textColor="@color/text_color3"
+                        android:textColorHint="@color/hint_color"
+                        android:textSize="14sp"
+                        tools:ignore="RtlSymmetry" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvMembershipInfoChangePw"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardBackgroundColor="@color/background"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:cardMaxElevation="0dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:animateLayoutChanges="true">
+
+                            <TextView
+                                android:id="@+id/tvMembershipInfoChangePw"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="?selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:fontFamily="@font/sofiaprosemibold"
+                                android:gravity="center"
+                                android:onClick="@{() -> fragmentMembershipInfoObject.changePwOnClick()}"
+                                android:paddingTop="12dp"
+                                android:paddingBottom="12dp"
+                                android:text="@string/change_pw"
+                                android:textAlignment="center"
+                                android:textColor="@color/yellow"
+                                android:textSize="15sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvMembershipInfoDeleteAccount"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardBackgroundColor="@color/background"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:cardMaxElevation="0dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tvMembershipInfoDeleteAccount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:fontFamily="@font/sofiaprosemibold"
+                                android:gravity="center"
+                                android:onClick="@{() -> fragmentMembershipInfoObject.deleteAccountOnClick()}"
+                                android:paddingTop="12dp"
+                                android:paddingBottom="12dp"
+                                android:text="@string/delete_account"
+                                android:textAlignment="center"
+                                android:textColor="@color/red"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.5" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clMembershipInfoSaveHolder"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/btnMembershipInfoPersonal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/other_btn_bg"
+                android:fontFamily="@font/sofiaprosemibold"
+                android:onClick="@{() -> fragmentMembershipInfoObject.saveOnClick(etMembershipInfoName.getText().toString().trim(), etMembershipInfoDateOfBirth.getText().toString().trim(), etMembershipInfoTcknPassport.getText().toString().trim(), etMembershipInfoEmail.getText().toString().trim())}"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="@string/save"
+                app:backgroundTint="@color/yellow"
+                app:cornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

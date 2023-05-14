@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="fragmentMembershipObject"
+            type="com.filozilla.fragments.MembershipFragment" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="tabController"
+            type="Boolean" />
+        <variable
+            name="dividerController"
+            type="Boolean" />
+        <variable
+            name="dividerController2"
+            type="Boolean" />
+        <variable
+            name="dividerController3"
+            type="Boolean" />
+        <variable
+            name="dividerController4"
+            type="Boolean" />
+        <variable
+            name="dividerController5"
+            type="Boolean" />
+        <variable
+            name="dividerController6"
+            type="Boolean" />
+        <variable
+            name="dividerController7"
+            type="Boolean" />
+        <variable
+            name="dividerController8"
+            type="Boolean" />
+        <variable
+            name="dividerController9"
+            type="Boolean" />
+        <variable
+            name="clController"
+            type="Boolean" />
+        <variable
+            name="clController2"
+            type="Boolean" />
+        <variable
+            name="signInProgressVisibility"
+            type="Boolean" />
+        <variable
+            name="signUpProgressVisibility"
+            type="Boolean" />
+        <variable
+            name="signUp2ProgressVisibility"
+            type="Boolean" />
+        <variable
+            name="clearVisibility"
+            type="Boolean" />
+        <variable
+            name="clearVisibility2"
+            type="Boolean" />
+        <variable
+            name="clearVisibility3"
+            type="Boolean" />
+        <variable
+            name="clearVisibility4"
+            type="Boolean" />
+        <variable
+            name="pwVisibility"
+            type="Boolean" />
+        <variable
+            name="pwVisibility2"
+            type="Boolean" />
+        <variable
+            name="pwVisibility3"
+            type="Boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clSigninRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/second_color">
+
+        <ScrollView
+            android:id="@+id/svSignin"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scrollbarThumbVertical="@color/yellow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSvSignin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/second_color">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clclMembershipTop"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivSigninTop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="24dp"
+                        android:contentDescription="@string/app_name"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5"
+                        app:srcCompat="@drawable/filozilla_top" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clMembershipTabHolder"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clclMembershipTop">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clSigninTabsHolder"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/cl_signin_tab_bg"
+                        android:elevation="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clSigninTabSignin"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@{tabController ? @drawable/cl_signin_tab_bg : @drawable/cl_signin_tab_bg2}"
+                            android:onClick="@{() -> fragmentMembershipObject.tabSigninOnClick()}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/clSigninTabSignup"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/tvSigninTabSignin"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sofiaproregular"
+                                android:gravity="center"
+                                android:paddingTop="12dp"
+                                android:paddingBottom="12dp"
+                                android:textColor="@color/second_color"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.5" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clSigninTabSignup"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@{tabController ? @drawable/cl_signin_tab_bg2 : @drawable/cl_signin_tab_bg}"
+                            android:onClick="@{() -> fragmentMembershipObject.tabSignupOnClick()}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/clSigninTabSignin"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/tvSigninTabSignup"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sofiaproregular"
+                                android:gravity="center"
+                                android:paddingTop="12dp"
+                                android:paddingBottom="12dp"
+                                android:textColor="@color/second_color"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.5" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clMembershipHolder"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/cl_tab_holder_bg"
+                    android:elevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clMembershipTabHolder">
+
+                    <LinearLayout
+                        android:id="@+id/linearSigninBody"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/cl_tab_holder_bg"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clSigninEmailHolder"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="16dp"
+                            android:animateLayoutChanges="true">
+
+                            <EditText
+                                android:id="@+id/etSigninEmail"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:autofillHints="emailAddress"
+                                android:background="@color/white"
+                                android:ems="10"
+                                android:fontFamily="@font/sofiaproregular"
+                                android:hint="@string/enter_email_hint"
+                                android:inputType="textWebEmailAddress"
+                                android:paddingStart="@dimen/et_8"
+                                android:textSize="@dimen/ts_15"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.5"
+                                tools:ignore="RtlSymmetry" />
+
+                            <ImageView
+                                android:id="@+id/ivSigninClearVisibility"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="2dp"
+                                android:contentDescription="@string/clear"
+                                android:onClick="@{() -> fragmentMembershipObject.clearVisibilityOnClick()}"
+                                android:padding="@dimen/iv_8"
+                                android:visibility="@{clearVisibility ? View.VISIBLE : View.INVISIBLE}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/close" />
+
+                            <View
+                                android:id="@+id/dividerSigninEmail"
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:background="@{dividerController ? @color/second_color : @color/divider_color}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/etSigninEmail" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clSigninPwHolder"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="16dp"
+                            android:animateLayoutChanges="true">
+
+                            <EditText
+                                android:id="@+id/etSigninPw"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:autofillHints="password"
+                                android:background="@color/white"
+                                android:ems="10"
+                                android:fontFamily="@font/sofiaproregular"
+                                android:hint="@string/enter_pw_hint"
+                                android:inputType="textPassword"
+                                android:paddingStart="@dimen/et_8"
+                                android:textSize="@dimen/ts_15"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.5"
+                                tools:ignore="RtlSymmetry" />
+
+                            <ImageView
+                                android:id="@+id/ivSigninPwVisibility"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/show"
+                                android:onClick="@{() -> fragmentMembershipObject.pwVisibilityOnClick()}"
+                                android:padding="@dimen/iv_6"
+                                android:visibility="@{pwVisibility ? View.VISIBLE : View.INVISIBLE}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/eye_close" />
+
+                            <View
+                                android:id="@+id/dividerSigninPw"
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:background="@{dividerController2 ? @color/second_color : @color/divider_color}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/etSigninPw" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clSigninOtherHolder"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clSigninRememberMe"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="24dp"
+                                android:layout_marginBottom="24dp"
+                                android:background="?selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:onClick="@{() -> fragmentMembershipObject.rememberMeOnClick()}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.5">
+
+                                <ImageView
+                                    android:id="@+id/ivSigninRememberMe"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="@string/remember_me"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/check" />
+
+                                <TextView
+                                    android:id="@+id/tvSigninRememberMe"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:fontFamily="@font/sofiaprosemibold"
+                                    android:text="@string/remember_me"
+                                    android:textColor="@color/text_color3"
+                                    android:textSize="@dimen/ts_14"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/ivSigninRememberMe"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.5" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <TextView
+                                android:id="@+id/tvSigninForgotPassword"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="24dp"
+                                android:layout_marginEnd="16dp"
+                                android:layout_marginBottom="24dp"
+                                android:background="?selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:fontFamily="@font/sofiaprosemibold"
+                                android:onClick="@{() -> fragmentMembershipObject.forgotPwOnClick()}"
+                                android:text="@string/forgot_pw"
+                                android:textColor="@color/text_color3"
+                                android:textSize="@dimen/ts_14"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clSignin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@{clController ? @drawable/cl_tab_holder_bg3 : @drawable/cl_tab_holder_bg}"
+                            android:elevation="5dp"
+                            android:onClick="@{() -> fragmentMembershipObject.signinOnClick(etSigninEmail.getText().toString().trim(), etSigninPw.getText().toString())}">
+
+                            <View
+                                android:id="@+id/dividerSignin"
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:background="@{dividerController3 ? @color/yellow : @color/divider_color}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:id="@+id/lottieSigninProgress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:visibility="@{signInProgressVisibility ? View.VISIBLE : View.GONE}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/dividerSignin"
+                                app:lottie_autoPlay="true"
+                                app:lottie_loop="true"
+                                app:lottie_rawRes="@raw/progress" />
+
+                            <TextView
+                                android:id="@+id/tvCvSignin2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginBottom="16dp"
+                                android:fontFamily="@font/sofiaprosemibold"
+                                android:text="@{signInProgressVisibility ? @string/empty : @string/signin}"
+                                android:textColor="@{clController ? @color/white : @color/hint_color}"
+                                android:textSize="@dimen/ts_16"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.5" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearSignupBody"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cl_tab_holder_bg"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearSigninBody">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clSignupForm"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="12dp"
+                            android:background="@drawable/form_bg"
+                            android:elevation="0dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/signupNameHolder"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:animateLayoutChanges="true"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <EditText
+                                    android:id="@+id/etSignupName"
+                                    android:layout_width="0dp"
+                                    android:layout_height="45dp"
+                                    android:autofillHints="name"
+                                    android:background="@color/white"
+                                    android:ems="10"
+                                    android:fontFamily="@font/sofiaproregular"
+                                    android:hint="@string/enter_name_lastname"
+                                    android:inputType="textCapWords"
+                                    android:paddingStart="@dimen/et_8"
+                                    android:textSize="15sp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:ignore="RtlSymmetry" />
+
+                                <ImageView
+                                    android:id="@+id/ivSignupNameVisibility"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="2dp"
+                                    android:contentDescription="@string/clear"
+                                    android:padding="@dimen/iv_8"
+                                    android:visibility="@{clearVisibility2 ? View.VISIBLE : View.INVISIBLE}"
+                                    android:onClick="@{() -> fragmentMembershipObject.clearVisibility2OnClick()}"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/close" />
+
+                                <View
+                                    android:id="@+id/dividerName"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:background="@{dividerController4 ? @color/second_color : @color/divider_color}"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/etSignupName" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/signupEmailHolder"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:animateLayoutChanges="true"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/signupNameHolder">
+
+                                <EditText
+                                    android:id="@+id/etSignupEmail"
+                                    android:layout_width="0dp"
+                                    android:layout_height="45dp"
+                                    android:autofillHints="emailAddress"
+                                    android:background="@color/white"
+                                    android:ems="10"
+                                    android:fontFamily="@font/sofiaproregular"
+                                    android:hint="@string/enter_email_hint"
+                                    android:inputType="textWebEmailAddress"
+                                    android:paddingStart="@dimen/et_8"
+                                    android:textSize="@dimen/ts_15"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:ignore="RtlSymmetry" />
+
+                                <ImageView
+                                    android:id="@+id/ivSignupEmailVisibility"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="2dp"
+                                    android:contentDescription="@string/clear"
+                                    android:padding="@dimen/iv_8"
+                                    android:visibility="@{clearVisibility3 ? View.VISIBLE : View.INVISIBLE}"
+                                    android:onClick="@{() -> fragmentMembershipObject.clearVisibility3OnClick()}"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/close" />
+
+                                <View
+                                    android:id="@+id/dividerEmail"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:background="@{dividerController5 ? @color/second_color : @color/divider_color}"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/etSignupEmail" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/signUpPhoneHolder"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:animateLayoutChanges="true"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/signupEmailHolder">
+
+                                <EditText
+                                    android:id="@+id/etSignupPhone"
+                                    android:layout_width="0dp"
+                                    android:layout_height="45dp"
+                                    android:autofillHints="phone"
+                                    android:background="@color/white"
+                                    android:ems="10"
+                                    android:fontFamily="@font/sofiaproregular"
+                                    android:hint="@string/enter_phone"
+                                    android:inputType="phone"
+                                    android:maxLength="20"
+                                    android:paddingStart="@dimen/et_8"
+                                    android:textSize="15sp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:ignore="RtlSymmetry" />
+
+                                <ImageView
+                                    android:id="@+id/ivSignupPhoneVisibility"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="2dp"
+                                    android:contentDescription="@string/clear"
+                                    android:padding="@dimen/iv_8"
+                                    android:visibility="@{clearVisibility4 ? View.VISIBLE : View.INVISIBLE}"
+                                    android:onClick="@{() -> fragmentMembershipObject.clearVisibility4OnClick()}"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/close" />
+
+                                <View
+                                    android:id="@+id/dividerPhone"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:background="@{dividerController6 ? @color/second_color : @color/divider_color}"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/etSignupPhone" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/signUpPwHolder"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:animateLayoutChanges="true"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/signUpPhoneHolder">
+
+                                <EditText
+                                    android:id="@+id/etSignupPw"
+                                    android:layout_width="0dp"
+                                    android:layout_height="45dp"
+                                    android:autofillHints="password"
+                                    android:background="@color/white"
+                                    android:ems="10"
+                                    android:fontFamily="@font/sofiaproregular"
+                                    android:hint="@string/enter_pw"
+                                    android:inputType="textWebPassword"
+                                    android:paddingStart="@dimen/et_8"
+                                    android:textSize="15sp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:ignore="RtlSymmetry" />
+
+                                <ImageView
+                                    android:id="@+id/ivSignupPwVisibility"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="@string/show"
+                                    android:onClick="@{() -> fragmentMembershipObject.pwVisibility2OnClick()}"
+                                    android:padding="6dp"
+                                    android:visibility="@{pwVisibility2 ? View.VISIBLE : View.INVISIBLE}"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/eye_close" />
+
+                                <View
+                                    android:id="@+id/dividerPw"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:background="@{dividerController7 ? @color/second_color : @color/divider_color}"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/etSignupPw"
+                                    tools:ignore="TooManyViews" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clSignUpRePwHolder"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:animateLayoutChanges="true"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/signUpPwHolder">
+
+                                <EditText
+                                    android:id="@+id/etSignupRePw"
+                                    android:layout_width="0dp"
+                                    android:layout_height="45dp"
+                                    android:autofillHints="password"
+                                    android:background="@color/white"
+                                    android:ems="10"
+                                    android:fontFamily="@font/sofiaproregular"
+                                    android:hint="@string/enter_again_pw"
+                                    android:inputType="textWebPassword"
+                                    android:paddingStart="@dimen/et_8"
+                                    android:textSize="15sp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:ignore="RtlSymmetry" />
+
+                                <ImageView
+                                    android:id="@+id/ivSignupPwVisibility2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="@string/show"
+                                    android:onClick="@{() -> fragmentMembershipObject.pwVisibility3OnClick()}"
+                                    android:padding="6dp"
+                                    android:visibility="@{pwVisibility3 ? View.VISIBLE : View.INVISIBLE}"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/eye_close" />
+
+                                <View
+                                    android:id="@+id/dividerRePw"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:background="@{dividerController8 ? @color/second_color : @color/divider_color}"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/etSignupRePw" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clSignup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@{clController2 ? @drawable/cl_tab_holder_bg3 : @drawable/cl_tab_holder_bg}"
+                            android:elevation="5dp"
+                            android:onClick="@{() -> fragmentMembershipObject.signupOnClick(etSignupName.getText().toString().trim(), etSignupEmail.getText().toString().trim(), etSignupPhone.getText().toString().trim(), etSignupPw.getText().toString())}"
+                            tools:ignore="TooManyViews">
+
+                            <View
+                                android:id="@+id/dividerSignUp"
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:background="@{dividerController9 ? @color/yellow : @color/divider_color}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:id="@+id/lottieSignupProgress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:visibility="@{signUpProgressVisibility ? View.VISIBLE : View.GONE}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/dividerSignUp"
+                                app:lottie_autoPlay="true"
+                                app:lottie_loop="true"
+                                app:lottie_rawRes="@raw/progress" />
+
+                            <TextView
+                                android:id="@+id/tvCvSignup"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="15dp"
+                                android:fontFamily="@font/sofiaprosemibold"
+                                android:text="@{signUpProgressVisibility ? @string/empty : @string/signup}"
+                                android:textColor="@{clController2 ? @color/white : @color/hint_color}"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.5"
+                                tools:ignore="TooDeepLayout" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clMembershipBottom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="32dp"
+                    android:background="@drawable/cl_tab_holder_bg2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clMembershipHolder">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clSigninVia"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clSigninSeperator"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="24dp"
+                            android:background="@color/hint_color2"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/tvSigninVia"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="TooManyViews">
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:id="@+id/tvSigninVia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sofiaproregular"
+                            android:text="@string/via_signin"
+                            android:textColor="@color/hint_color"
+                            android:textSize="@dimen/ts_15"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="TooManyViews" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clSigninSeperator2"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginEnd="4dp"
+                            android:background="@color/hint_color2"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/tvSigninVia"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clSigninViaGoogle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/clSigninVia"
+                        tools:ignore="TooManyViews">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clSigninGoogle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:background="@drawable/card_social_bg"
+                            android:onClick="@{() -> fragmentMembershipObject.googleOnClick()}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clSigninGoogleHolder"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginBottom="16dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.5">
+
+                                <ImageView
+                                    android:id="@+id/ivSigninGoogle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="32dp"
+                                    android:contentDescription="@string/signin_google"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/google_icon" />
+
+                                <TextView
+                                    android:id="@+id/textView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:fontFamily="@font/sofiaprosemibold"
+                                    android:text="@string/signin_google"
+                                    android:textColor="@color/text_color2"
+                                    android:textSize="@dimen/ts_14"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clMembershipSocialMedia"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="24dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/clSigninViaGoogle">
+
+                        <View
+                            android:id="@+id/dividerMembershipSocialAccounts"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:background="@color/divider_color"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clMembershipSocialMediaHolder"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/ivMembershipFacebook"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:background="?selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:contentDescription="@string/content_desc_facebook"
+                                android:focusable="true"
+                                android:onClick="@{() -> fragmentMembershipObject.facebookOnClick()}"
+                                android:padding="4dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/ivMembershipTwitter"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.5"
+                                app:srcCompat="@drawable/facebook"
+                                tools:ignore="TooDeepLayout" />
+
+                            <ImageView
+                                android:id="@+id/ivMembershipTwitter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:background="?selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:contentDescription="@string/content_desc_twitter"
+                                android:focusable="true"
+                                android:onClick="@{() -> fragmentMembershipObject.twitterOnClick()}"
+                                android:padding="4dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/ivMembershipYoutube"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/ivMembershipFacebook"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.5"
+                                app:srcCompat="@drawable/twitter" />
+
+                            <ImageView
+                                android:id="@+id/ivMembershipYoutube"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:background="?selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:contentDescription="@string/content_desc_youtube"
+                                android:focusable="true"
+                                android:onClick="@{() -> fragmentMembershipObject.youtubeOnClick()}"
+                                android:padding="4dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/ivMembershipLinkedin"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/ivMembershipTwitter"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.5"
+                                app:srcCompat="@drawable/youtube" />
+
+                            <ImageView
+                                android:id="@+id/ivMembershipLinkedin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:background="?selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:contentDescription="@string/content_desc_linkedin"
+                                android:focusable="true"
+                                android:onClick="@{() -> fragmentMembershipObject.linkedinOnClick()}"
+                                android:padding="4dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/ivMembershipYoutube"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.5"
+                                app:srcCompat="@drawable/linkedin" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <View
+                            android:id="@+id/dividerMembershipSocialAccounts2"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:background="@color/divider_color"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

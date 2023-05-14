@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="actionbar_color">#2C5098</color>
+    <color name="purple_200">#3A62B5</color>
+    <color name="primary_color">#3056A3</color>
+    <color name="purple_700">#2C5098</color>
+    <color name="secondary_color">#4B75CA</color>
+    <color name="secondary_variant_color">#3A62B5</color>
+    <color name="black">#000000</color>
+    <color name="gray">#E6E6E6</color>
+    <color name="gray2">#F4F4F4</color>
+    <color name="gray3">#ACACAC</color>
+    <color name="yellow">#FFC905</color>
+    <color name="yellow2">#F3C00A</color>
+    <color name="yellow3">#D6A700</color>
+    <color name="green">#6BC800</color>
+    <color name="green2">#75DA00</color>
+    <color name="green3">#0ACC0A</color>
+    <color name="red">#FF1100</color>
+    <color name="red2">#E20F00</color>
+    <color name="red3">#BC0C00</color>
+    <color name="orange">#FF9E19</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white2">#FDFDFD</color>
+    <color name="white3">#FBFBFB</color>
+
+    <color name="background">#F4F5F7</color>
+    <color name="background2">#DFDFDF</color>
+    <color name="background3">#F4F4F4</color>
+
+    <color name="first_color">#3A62B5</color>
+    <color name="second_color">#2C5098</color>
+    <color name="third_color">#3A62B5</color>
+    <color name="fourth_color">#274C97</color>
+    <color name="fifth_color">#24478C</color>
+    <color name="sixth_color">#802C5098</color>
+    <color name="seventh_color">#3457A1</color>
+    <color name="eighth_color">#805E91FF</color>
+
+    <color name="hint_color">#A6A6A6</color>
+    <color name="hint_color2">#D9DDE2</color>
+    <color name="hint_color3">#C0C7D1</color>
+    <color name="hint_color4">#7F8095</color>
+    <color name="hint_color5">#F5F6FA</color>
+    <color name="hint_color6">#BAC0CA</color>
+    <color name="text_color">#202023</color>
+    <color name="text_color2">#3A3A3C</color>
+    <color name="text_color3">#757575</color>
+
+    <color name="sb_active_color">#4973CA</color>
+    <color name="sb_inactive_color">#DDDFE0</color>
+    <color name="sb_thumb_color">#3F6AC5</color>
+
+    <color name="switch_off_bg">#FFFFFF</color>
+    <color name="switch_off_border_bg">#CFCFD0</color>
+    <color name="switch_on_bg">#3A62B5</color>
+    <color name="circle_color">#EFEFEF</color>
+
+    <color name="feedback_bg_color">#EAEDF5</color>
+
+    <color name="divider_color">#D6D7D9</color>
+    <color name="divider_color2">#858585</color>
+
+    <color name="car_bg_color">#383E56</color>
+
+    <color name="facebook_color">#1A77F2</color>
+
+</resources>

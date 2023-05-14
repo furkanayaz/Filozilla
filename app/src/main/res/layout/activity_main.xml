@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="activityMainObject"
+            type="com.filozilla.activities.MainActivity" />
+        <variable
+            name="bottomVisibility"
+            type="Boolean" />
+        <variable
+            name="searchVisibility"
+            type="Boolean" />
+        <variable
+            name="campaignsVisibility"
+            type="Boolean" />
+        <variable
+            name="leasesVisibility"
+            type="Boolean" />
+        <variable
+            name="otherVisibility"
+            type="Boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMainRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".activities.MainActivity">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/navHostMain"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toTopOf="@+id/linearBottomNav"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/nav_main" />
+
+        <LinearLayout
+            android:id="@+id/linearBottomNav"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:background="@color/background"
+            android:elevation="10dp"
+            android:orientation="horizontal"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:visibility="@{bottomVisibility ? View.VISIBLE : View.GONE}"
+            android:weightSum="4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvBottomSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:cardMaxElevation="0dp">
+
+                <LinearLayout
+                    android:id="@+id/linearBottomSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:animateLayoutChanges="true"
+                    android:background="@{searchVisibility ? @color/second_color : @color/background}"
+                    android:gravity="center"
+                    android:onClick="@{() -> activityMainObject.bottomSearchOnClick()}"
+                    android:orientation="horizontal"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp">
+
+                    <ImageView
+                        android:id="@+id/ivBottomSearch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/bottom_search"
+                        android:src="@{searchVisibility ? @drawable/search4 : @drawable/search3}" />
+
+                    <TextView
+                        android:id="@+id/tvBottomSearch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/sofiaproregular"
+                        android:text="@string/bottom_search"
+                        android:textColor="@{searchVisibility ? @color/white : @color/second_color}"
+                        android:textSize="12sp"
+                        android:visibility="@{searchVisibility ? View.VISIBLE : View.GONE}" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvBottomCampaigns"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:cardMaxElevation="0dp">
+
+                <LinearLayout
+                    android:id="@+id/linearBottomCampaigns"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:animateLayoutChanges="true"
+                    android:background="@{campaignsVisibility ? @color/second_color : @color/background}"
+                    android:gravity="center"
+                    android:onClick="@{() -> activityMainObject.bottomCampaingsOnClick()}"
+                    android:orientation="horizontal"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp">
+
+                    <ImageView
+                        android:id="@+id/ivBottomCampaigns"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/bottom_campaigns"
+                        android:src="@{campaignsVisibility ? @drawable/campaign2 : @drawable/campaign}" />
+
+                    <TextView
+                        android:id="@+id/tvBottomCampaigns"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/sofiaproregular"
+                        android:text="@string/bottom_campaigns"
+                        android:textColor="@{campaignsVisibility ? @color/white : @color/second_color}"
+                        android:textSize="12sp"
+                        android:visibility="@{campaignsVisibility ? View.VISIBLE : View.GONE}" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvBottomLeases"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:cardMaxElevation="0dp">
+
+                <LinearLayout
+                    android:id="@+id/linearBottomLeases"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:animateLayoutChanges="true"
+                    android:background="@{leasesVisibility ? @color/second_color : @color/background}"
+                    android:gravity="center"
+                    android:onClick="@{() -> activityMainObject.bottomLeasesOnClick()}"
+                    android:orientation="horizontal"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp">
+
+                    <ImageView
+                        android:id="@+id/ivBottomLeases"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/bottom_leases"
+                        android:src="@{leasesVisibility ? @drawable/car2 : @drawable/car}" />
+
+                    <TextView
+                        android:id="@+id/tvBottomLeases"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/sofiaproregular"
+                        android:text="@string/bottom_leases"
+                        android:textColor="@{leasesVisibility ? @color/white : @color/second_color}"
+                        android:textSize="12sp"
+                        android:visibility="@{leasesVisibility ? View.VISIBLE : View.GONE}" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvBottomOther"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/background"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:cardMaxElevation="0dp">
+
+                <LinearLayout
+                    android:id="@+id/linearBottomOther"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:animateLayoutChanges="true"
+                    android:background="@{otherVisibility ? @color/second_color : @color/background}"
+                    android:onClick="@{() -> activityMainObject.bottomOtherOnClick()}"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp">
+
+                    <ImageView
+                        android:id="@+id/ivBottomOther"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/bottom_other"
+                        android:src="@{otherVisibility ? @drawable/more_horiz2 : @drawable/more_horiz}" />
+
+                    <TextView
+                        android:id="@+id/tvBottomOther"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/sofiaproregular"
+                        android:text="@string/bottom_other"
+                        android:textColor="@{otherVisibility ? @color/white : @color/second_color}"
+                        android:textSize="12sp"
+                        android:visibility="@{otherVisibility ? View.VISIBLE : View.GONE}" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

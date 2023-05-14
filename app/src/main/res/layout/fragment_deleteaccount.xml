@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="fragmentDeleteAccountObject"
+            type="com.filozilla.fragments.DeleteAccountFragment" />
+        <variable
+            name="accountOtherVisibility"
+            type="Boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clDeleteAccountRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <ScrollView
+            android:id="@+id/svDeleteAccount"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clDeleteAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clDeleteAccountTop"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivDeleteAccountBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="12dp"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:contentDescription="@string/back"
+                        android:focusable="true"
+                        android:onClick="@{() -> fragmentDeleteAccountObject.backOnClick()}"
+                        android:padding="8dp"
+                        android:rotation="180"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/arrow_right" />
+
+                    <TextView
+                        android:id="@+id/tvDeleteAccountBack"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/sofiaproregular"
+                        android:text="@string/delete_account"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivDeleteAccountBack"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clDeleteAccountInfoHolder"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/cl_delete_account_info_bg"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDeleteAccountBack">
+
+                        <ImageView
+                            android:id="@+id/ivDeleteAccountInfoIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:contentDescription="@string/icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5"
+                            app:srcCompat="@drawable/warning2" />
+
+                        <TextView
+                            android:id="@+id/tvDeleteAccountInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/sofiaproregular"
+                            android:text="@string/delete_account_desc"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/ivDeleteAccountInfoIcon"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearSvDeleteProfile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clDeleteAccountTop">
+
+                    <RadioGroup
+                        android:id="@+id/rgDeleteAccount"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="12dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="8dp">
+
+                        <RadioButton
+                            android:id="@+id/rbDeleteAccountOption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:button="@drawable/rb_selector"
+                            android:buttonTint="@color/text_color2"
+                            android:fontFamily="@font/sofiaproregular"
+                            android:gravity="center|end"
+                            android:text="@string/delete_account_option" />
+
+                        <RadioButton
+                            android:id="@+id/rbDeleteAccountOption2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:button="@drawable/rb_selector"
+                            android:buttonTint="@color/text_color2"
+                            android:fontFamily="@font/sofiaproregular"
+                            android:gravity="center|end"
+                            android:text="@string/delete_account_option2" />
+
+                        <RadioButton
+                            android:id="@+id/rbDeleteAccountOption3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:button="@drawable/rb_selector"
+                            android:buttonTint="@color/text_color2"
+                            android:fontFamily="@font/sofiaproregular"
+                            android:gravity="center|end"
+                            android:text="@string/delete_account_option3" />
+
+                        <RadioButton
+                            android:id="@+id/rbDeleteAccountOption4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:button="@drawable/rb_selector"
+                            android:buttonTint="@color/text_color2"
+                            android:fontFamily="@font/sofiaproregular"
+                            android:gravity="center|end"
+                            android:text="@string/delete_account_option4" />
+
+                        <RadioButton
+                            android:id="@+id/rbDeleteAccountOption5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:button="@drawable/rb_selector"
+                            android:buttonTint="@color/text_color2"
+                            android:fontFamily="@font/sofiaproregular"
+                            android:gravity="center|end"
+                            android:text="@string/delete_account_option5" />
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/etDeleteAccountOther"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/et_bg10"
+                        android:ems="10"
+                        android:fontFamily="@font/sofiaproregular"
+                        android:gravity="start|top"
+                        android:hint="@string/other_hint"
+                        android:importantForAutofill="no"
+                        android:inputType="textMultiLine|textCapSentences"
+                        android:paddingStart="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="16dp"
+                        android:textColorHint="@color/hint_color"
+                        android:textSize="14sp"
+                        android:visibility="@{accountOtherVisibility ? View.VISIBLE : View.GONE}" />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clDeleteAccountSaveHolder"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearSvDeleteProfile">
+
+                    <Button
+                        android:id="@+id/btnDeleteAccount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/delete_btn_bg"
+                        android:fontFamily="@font/sofiaprosemibold"
+                        android:onClick="@{() -> fragmentDeleteAccountObject.deleteAccountOnClick()}"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/delete_account2"
+                        app:backgroundTint="@color/red"
+                        app:cornerRadius="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

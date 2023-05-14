@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="fragmentBillingInfoObject"
+            type="com.filozilla.fragments.BillingInfoFragment" />
+        <import type="android.view.View" />
+        <variable
+            name="country"
+            type="String" />
+        <variable
+            name="city"
+            type="String" />
+        <variable
+            name="county"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clBillingInfoRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <ScrollView
+            android:id="@+id/svBillingInfo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/background"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/clBillingInfoSaveHolder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSvBillingInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clBillingInfoTop"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/second_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivBillingInfoBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="12dp"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:contentDescription="@string/back"
+                        android:focusable="true"
+                        android:onClick="@{() -> fragmentBillingInfoObject.backOnClick()}"
+                        android:padding="8dp"
+                        android:rotation="180"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/arrow_right" />
+
+                    <TextView
+                        android:id="@+id/tvBillingInfoBack"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/sofiaproregular"
+                        android:text="@string/my_billing_info"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivBillingInfoBack"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clBillingInfoHolder"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/cl_edit_profile_info_bg"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvBillingInfoBack">
+
+                        <ImageView
+                            android:id="@+id/ivBillingInfoIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:contentDescription="@string/icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5"
+                            app:srcCompat="@drawable/warning2" />
+
+                        <TextView
+                            android:id="@+id/tvBillingInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/sofiaproregular"
+                            android:text="@string/my_membership_info"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/ivBillingInfoIcon"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearBillingInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clBillingInfoTop">
+
+                    <TextView
+                        android:id="@+id/tvBillingInfoHead2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:fontFamily="@font/sofiaprosemibold"
+                        android:text="@string/my_billing_info"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clBillingInfoPhoneNumberHolder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/et_bg">
+
+                        <EditText
+                            android:id="@+id/etBillingInfoPhoneNumber"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:autofillHints="phone"
+                            android:background="@drawable/et_bg"
+                            android:ems="10"
+                            android:fontFamily="@font/sofiaprolight"
+                            android:hint="@string/enter_phone"
+                            android:inputType="phone"
+                            android:maxLength="20"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:textColor="@color/text_color"
+                            android:textColorHint="@color/text_color3"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clBillingInfoCountryHolder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/et_bg">
+
+                        <EditText
+                            android:id="@+id/etBillingInfoCountry"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:autofillHints="name"
+                            android:background="@drawable/et_bg"
+                            android:drawableEnd="@drawable/arrow_down3"
+                            android:ems="10"
+                            android:focusableInTouchMode="false"
+                            android:fontFamily="@font/sofiaprolight"
+                            android:hint="@string/choose_country"
+                            android:inputType="none"
+                            android:longClickable="false"
+                            android:onClick="@{() -> fragmentBillingInfoObject.chooseCountryOnClick()}"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:text="@{country}"
+                            android:textColor="@color/text_color"
+                            android:textColorHint="@color/text_color3"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clBillingInfoCityCountyHolder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/et_bg">
+
+                        <EditText
+                            android:id="@+id/etBillingInfoCity"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:autofillHints="name"
+                            android:background="@drawable/cl_countrycode_bg"
+                            android:drawableEnd="@drawable/arrow_down3"
+                            android:ems="10"
+                            android:focusableInTouchMode="false"
+                            android:fontFamily="@font/sofiaprolight"
+                            android:hint="@string/choose_city"
+                            android:inputType="none"
+                            android:longClickable="false"
+                            android:onClick="@{() -> fragmentBillingInfoObject.chooseCityOnClick()}"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:text="@{city}"
+                            android:textColor="@color/text_color"
+                            android:textColorHint="@color/hint_color"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/divBillingInfoCityCounty"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5" />
+
+                        <View
+                            android:id="@+id/divBillingInfoCityCounty"
+                            android:layout_width="0.5dp"
+                            android:layout_height="0dp"
+                            android:background="@color/second_color"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/etBillingInfoCounty"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/etBillingInfoCity"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/etBillingInfoCounty"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:autofillHints="name"
+                            android:background="@drawable/cl_phonenumber_bg"
+                            android:drawableEnd="@drawable/arrow_down3"
+                            android:ems="10"
+                            android:focusableInTouchMode="false"
+                            android:fontFamily="@font/sofiaprolight"
+                            android:hint="@string/choose_county"
+                            android:inputType="none"
+                            android:longClickable="false"
+                            android:onClick="@{() -> fragmentBillingInfoObject.chooseCountyOnClick()}"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:text="@{county}"
+                            android:textColor="@color/text_color"
+                            android:textColorHint="@color/hint_color"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/divBillingInfoCityCounty"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clBillingInfoAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/et_bg">
+
+                        <EditText
+                            android:id="@+id/etBillingInfoAddress"
+                            android:layout_width="0dp"
+                            android:layout_height="120dp"
+                            android:autofillHints="postalAddress"
+                            android:background="@drawable/et_bg"
+                            android:ems="10"
+                            android:fontFamily="@font/sofiaprolight"
+                            android:gravity="start|top"
+                            android:hint="@string/entry_address"
+                            android:inputType="textMultiLine|textCapWords"
+                            android:paddingStart="12dp"
+                            android:paddingTop="8dp"
+                            android:paddingEnd="12dp"
+                            android:textColor="@color/text_color"
+                            android:textColorHint="@color/hint_color"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clBillingInfoPostCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/et_bg">
+
+                        <EditText
+                            android:id="@+id/etBillingInfoPostCode"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:autofillHints="postalCode"
+                            android:background="@drawable/et_bg"
+                            android:ems="10"
+                            android:fontFamily="@font/sofiaprolight"
+                            android:hint="@string/entry_postcode"
+                            android:inputType="number"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:textColor="@color/text_color"
+                            android:textColorHint="@color/hint_color"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clBillingInfoSaveHolder"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/btnBillingInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/other_btn_bg"
+                android:fontFamily="@font/sofiaprosemibold"
+                android:onClick="@{() -> fragmentBillingInfoObject.saveOnClick(etBillingInfoPhoneNumber.getText().toString().trim(), country, city, county, etBillingInfoAddress.getText().toString().trim(), etBillingInfoPostCode.getText().toString().trim())}"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="@string/save"
+                app:backgroundTint="@color/yellow"
+                app:cornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

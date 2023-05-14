@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/homePageFragment">
+
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.filozilla.fragments.HomePageFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_home_page">
+        <action
+            android:id="@+id/homePageToPickUp"
+            app:destination="@id/pickUpDropOffFragment"
+            app:enterAnim="@anim/scale" />
+        <action
+            android:id="@+id/homePageToCampaigns"
+            app:destination="@id/campaignsFragment"
+            app:enterAnim="@anim/scale" />
+        <action
+            android:id="@+id/homePageToLeases"
+            app:destination="@id/leasesFragment"
+            app:enterAnim="@anim/scale" />
+        <action
+            android:id="@+id/homePageToOther"
+            app:destination="@id/otherFragment"
+            app:enterAnim="@anim/scale" />
+        <action
+            android:id="@+id/homePageToDateTime"
+            app:destination="@id/dateTimeFragment"
+            app:enterAnim="@anim/scale" />
+        <action
+            android:id="@+id/homePageToDtPicker"
+            app:destination="@id/dailyDTPickerFragment"
+            app:enterAnim="@anim/scale" />
+    </fragment>
+    <fragment
+        android:id="@+id/pickUpDropOffFragment"
+        android:name="com.filozilla.fragments.PickUpDropOffFragment"
+        android:label="PickUpDropOffFragment"
+        tools:layout="@layout/fragment_pickup_dropoff">
+        <action
+            android:id="@+id/pickUpToSearch"
+            app:destination="@id/homePageFragment"
+            app:enterAnim="@anim/scale" />
+    </fragment>
+    <fragment
+        android:id="@+id/campaignsFragment"
+        android:name="com.filozilla.fragments.CampaignsFragment"
+        android:label="CampaignsFragment"
+        tools:layout="@layout/fragment_campaigns" >
+        <action
+            android:id="@+id/campaignsToSearch"
+            app:destination="@id/homePageFragment"
+            app:enterAnim="@anim/scale" />
+        <action
+            android:id="@+id/campaignToCampaignDetail"
+            app:destination="@id/campaignDetailFragment"
+            app:enterAnim="@anim/scale" />
+    </fragment>
+    <fragment
+        android:id="@+id/leasesFragment"
+        android:name="com.filozilla.fragments.LeasesFragment"
+        android:label="LeasesFragment"
+        tools:layout="@layout/fragment_leases" >
+        <action
+            android:id="@+id/leasesToSearch"
+            app:destination="@id/homePageFragment"
+            app:enterAnim="@anim/scale" />
+    </fragment>
+    <fragment
+        android:id="@+id/otherFragment"
+        android:name="com.filozilla.fragments.OtherFragment"
+        android:label="OtherFragment"
+        tools:layout="@layout/fragment_other" >
+        <action
+            android:id="@+id/otherToSearch"
+            app:destination="@id/homePageFragment"
+            app:enterAnim="@anim/scale" />
+        <action
+            android:id="@+id/otherToMembershipInfo"
+            app:destination="@id/editProfileFragment"
+            app:enterAnim="@anim/scale" />
+        <action
+            android:id="@+id/otherToFeedBack"
+            app:destination="@id/feedBackFragment"
+            app:enterAnim="@anim/scale" />
+        <action
+            android:id="@+id/otherToDrivingInfo"
+            app:destination="@id/drivingInfoFragment"
+            app:enterAnim="@anim/scale" />
+        <action
+            android:id="@+id/otherToBillingInfo"
+            app:destination="@id/billingInfoFragment"
+            app:enterAnim="@anim/scale" />
+        <action
+            android:id="@+id/otherToPayment"
+            app:destination="@id/paymentMehodFragment"
+            app:enterAnim="@anim/scale" />
+        <action
+            android:id="@+id/otherToContract"
+            app:destination="@id/contractFragment"
+            app:enterAnim="@anim/scale" />
+    </fragment>
+    <fragment
+        android:id="@+id/dateTimeFragment"
+        android:name="com.filozilla.fragments.MonthlyDTPickerFragment"
+        android:label="DateTimeFragment"
+        tools:layout="@layout/fragment_monthly_dt_picker" >
+        <action
+            android:id="@+id/dateTimeToSearch"
+            app:destination="@id/homePageFragment"
+            app:enterAnim="@anim/scale" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.filozilla.fragments.MembershipInfoFragment"
+        android:label="EditProfileFragment"
+        tools:layout="@layout/fragment_membership_info" >
+        <action
+            android:id="@+id/MembershipInfoToOther"
+            app:destination="@id/otherFragment"
+            app:enterAnim="@anim/scale" />
+        <action
+            android:id="@+id/editToDeleteAccount"
+            app:destination="@id/deleteAccountToEdit"
+            app:enterAnim="@anim/scale" />
+    </fragment>
+    <fragment
+        android:id="@+id/deleteAccountToEdit"
+        android:name="com.filozilla.fragments.DeleteAccountFragment"
+        android:label="DeleteAccountFragment"
+        tools:layout="@layout/fragment_deleteaccount" >
+        <action
+            android:id="@+id/deleteAccountToEdit"
+            app:destination="@id/editProfileFragment"
+            app:enterAnim="@anim/scale" />
+    </fragment>
+    <fragment
+        android:id="@+id/feedBackFragment"
+        android:name="com.filozilla.fragments.FeedBackFragment"
+        android:label="FeedBackFragment"
+        tools:layout="@layout/fragment_feedback" >
+        <action
+            android:id="@+id/feedBackToOther"
+            app:destination="@id/otherFragment"
+            app:enterAnim="@anim/scale" />
+    </fragment>
+    <fragment
+        android:id="@+id/drivingInfoFragment"
+        tools:layout="@layout/fragment_driving_license_info"
+        android:name="com.filozilla.fragments.DrivingLicenseInfoFragment"
+        android:label="DrivingInfoFragment" >
+        <action
+            android:id="@+id/dirivingInfoToOther"
+            app:destination="@id/otherFragment"
+            app:enterAnim="@anim/scale" />
+    </fragment>
+    <fragment
+        android:id="@+id/campaignDetailFragment"
+        tools:layout="@layout/fragment_campaign_detail"
+        android:name="com.filozilla.fragments.CampaignDetailFragment"
+        android:label="CampaignDetailFragment" >
+        <action
+            android:id="@+id/campaignDetailToCampaign"
+            app:destination="@id/campaignsFragment"
+            app:enterAnim="@anim/scale" />
+        <argument
+            android:name="campaign"
+            app:argType="com.filozilla.models.Campaign" />
+    </fragment>
+    <fragment
+        android:id="@+id/billingInfoFragment"
+        tools:layout="@layout/fragment_billing_info"
+        android:name="com.filozilla.fragments.BillingInfoFragment"
+        android:label="BillingInfoFragment" >
+        <action
+            android:id="@+id/billingInfoToOther"
+            app:destination="@id/otherFragment"
+            app:enterAnim="@anim/scale" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentMehodFragment"
+        tools:layout="@layout/fragment_payment_method"
+        android:name="com.filozilla.fragments.PaymentMethodFragment"
+        android:label="PaymentMehodFragment" >
+        <action
+            android:id="@+id/paymentToOther"
+            app:destination="@id/otherFragment"
+            app:enterAnim="@anim/scale" />
+        <action
+            android:id="@+id/paymentToNewPayment"
+            app:destination="@id/addNewPaymentMethodFragment"
+            app:enterAnim="@anim/scale" />
+    </fragment>
+    <dialog
+        android:id="@+id/addNewPaymentMethodFragment"
+        tools:layout="@layout/new_payment_method_dialog"
+        android:name="com.filozilla.fragments.PaymentMethodFragment"
+        android:label="AddNewPaymentMethodFragment" >
+        <action
+            android:id="@+id/newPaymentToPayment"
+            app:destination="@id/paymentMehodFragment"
+            app:enterAnim="@anim/scale" />
+    </dialog>
+    <fragment
+        android:id="@+id/contractFragment"
+        tools:layout="@layout/fragment_contract"
+        android:name="com.filozilla.fragments.ContractFragment"
+        android:label="ContractFragment" >
+        <action
+            android:id="@+id/contractToOther"
+            app:destination="@id/otherFragment"
+            app:enterAnim="@anim/scale" />
+        <argument
+            android:name="contractHead"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/dailyDTPickerFragment"
+        tools:layout="@layout/fragment_daily_dt_picker"
+        android:name="com.filozilla.fragments.DailyDTPickerFragment"
+        android:label="DailyDTPickerFragment" >
+        <action
+            android:id="@+id/dtPickerToHomePage"
+            app:destination="@id/homePageFragment"
+            app:enterAnim="@anim/scale" />
+    </fragment>
+</navigation>

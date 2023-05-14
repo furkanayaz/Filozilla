@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="switch_padding">-1dp</dimen>
+    <dimen name="switch_radius">24dp</dimen>
+    <dimen name="switch_height">24dp</dimen>
+    <dimen name="et_8">8dp</dimen>
+    <dimen name="et_16">16dp</dimen>
+    <dimen name="iv_4">4dp</dimen>
+    <dimen name="iv_6">6dp</dimen>
+    <dimen name="iv_8">8dp</dimen>
+    <dimen name="ts_14">14sp</dimen>
+    <dimen name="ts_15">15sp</dimen>
+    <dimen name="ts_16">16sp</dimen>
+    <dimen name="ts_20">20sp</dimen>
+    <dimen name="ts_28">28sp</dimen>
+    <dimen name="list_item_spacing">16dp</dimen>
+    <dimen name="list_item_spacing_half">8dp</dimen>
+</resources>

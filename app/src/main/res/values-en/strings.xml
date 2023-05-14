@@ -1,0 +1,328 @@
+<resources
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="app_name">Filozilla</string>
+    <string name="app_name2">FİLOZİLLA</string>
+
+    <string name="signin_head">Merhaba!</string>
+    <string name="signin_head_sub">Seni aramızda görmekten mutluluk duyuyoruz!</string>
+    <string name="enter_email_hint">E-Posta adresinizi giriniz</string>
+    <string name="enter_pw_hint">Şifrenizi giriniz</string>
+    <string name="enter_name_lastname">Ad Soyad giriniz</string>
+    <string name="enter_phone">Telefon numarası giriniz</string>
+    <string name="enter_pw">Şifreyi giriniz</string>
+    <string name="enter_again_pw">Şifreyi tekrar giriniz</string>
+    <string name="enter_company_name">Firma adını giriniz</string>
+    <string name="enter_company_email">Firma e-posta giriniz</string>
+    <string name="enter_company_phone">Firma tel no giriniz</string>
+    <string name="clear">Temizle</string>
+    <string name="show">Göster</string>
+    <string name="remember_me">Beni Hatırla</string>
+    <string name="forgot_pw">Şifremi Unuttum</string>
+    <string name="signin">Giriş Yap</string>
+    <string name="signin_google">Google ile Giriş Yap</string>
+    <string name="via_signin">ile giriş yap</string>
+    <string name="exists_account">Hesabın yok mu ? <u><b>Kayıt Ol</b></u></string>
+    <string name="individual">Bireysel</string>
+    <string name="corporate">Kurumsal</string>
+    <string name="signup">Kayıt Ol</string>
+    <string name="empty" />
+    <string name="welcome">Hoşgeldiniz,\t</string>
+    <string name="content_desc_menu">Menü</string>
+    <string name="content_desc_add">Ekle</string>
+    <string name="content_desc_notification">Bildirimler</string>
+    <string name="search">Ara</string>
+    <string name="go">İleri</string>
+    <string name="back">Geri</string>
+    <string name="back2">Geri Dön</string>
+    <string name="close">Kapat</string>
+    <string name="picture">Picture</string>
+    <string name="icon">Icon</string>
+    <string name="logo">Logo</string>
+    <string name="company">Firma</string>
+    <string name="signup_head">Yeni bir hesap oluşturarak aramıza katıl!</string>
+
+    <string name="forgot_pw_head">Şifre Yenileme</string>
+    <string name="forgot_pw_head_sub">Şifreni sıfırlaman için e-posta adresine kod göndereceğiz!</string>
+    <string name="send">Gönder</string>
+    <string name="change_pw_head_sub">Şifreni yenilemek için aşağıya yeni şifreni girebilirsin!</string>
+    <string name="enter_new_pw">Yeni şifrenizi giriniz</string>
+    <string name="enter_re_new_pw">Yeni şifrenizi tekrar giriniz</string>
+    <string name="cancel">İptal</string>
+    <string name="cancel2">İPTAL</string>
+    <string name="save">Kaydet</string>
+    <string name="save2">KAYDET</string>
+    <string name="security_code">Güvenlik Kodu</string>
+    <string name="security_code_head_sub">E-Posta adresine gelen kodu girerek şifreni yenile!</string>
+    <string name="clock">Saat</string>
+    <string name="confirm">Onayla</string>
+
+    <string name="send_email_failure">Filozilla üyeliğinizi tamamlayabilmeniz için e-posta adresinize bağlantı gönderirken hata meydana geldi. Lütfen daha sonra tekrar deneyiniz. İlginiz için teşekkür ederiz.</string>
+    <string name="send_email_success">Filozilla\'yı kullanabilmeniz için e-posta adresinize göndermiş olduğumuz bağlantı linkine tıklayarak üyeliğinizi tamamlayabilirsiniz. İlginiz için teşekkür ederiz.</string>
+
+    <string name="success_sign_up">Üyelik işlemleriniz başarıyla tamamlandı.</string>
+    <string name="error_sign_up">Üyelik işlemleriniz gerçekleştirilemedi.</string>
+
+    <string name="error_feedback_status">Lütfen durum ifadenizi seçiniz.</string>
+    <string name="error_account">Hesabınızla ilgili problem meydana geldiğinden dolayı işleminiz gerçekleştirilemedi.</string>
+    <string name="error_send_feedback">Geri bildirim gönderilirken hata meydana geldi.</string>
+    <string name="success_send_feedback">Geri bildirim başarıyla iletildi.</string>
+
+    <string name="error_feed_back">Mesaj içeriğiniz minimum 10 karakterden oluşmalıdır.</string>
+
+    <string name="bottom_search">Ara</string>
+    <string name="bottom_campaigns">Kampanyalar</string>
+    <string name="bottom_leases">Kiralamalar</string>
+    <string name="bottom_other">Diğer</string>
+    <string name="bottom_homepage">Anasayfa</string>
+    <string name="bottom_management">Yönetim</string>
+    <string name="bottom_tools">Araçlar</string>
+
+    <string name="leases_empty">Henüz kiralamış olduğunuz araç bulunmamaktadır…</string>
+    <string name="payment_method_empty">Henüz kayıtlı ödeme yönteminiz bulunmamaktadır…</string>
+
+    <string name="payment_method_add">ÖDEME YÖNTEMİ EKLE</string>
+    <string name="payment_method_add2">Ödeme Yöntemi Ekle</string>
+    <string name="card_fullname">Kart Sahibinin Adı Soyadı</string>
+    <string name="card_number">Kart Numarası</string>
+    <string name="card_expirydate">Kart Son Kullanma Tarihi</string>
+    <string name="card_securitycode">Kart Güvenlik Kodu</string>
+
+    <string name="payment_fullname_error">Kart üzerinde yer alan ad soyad bilgisini giriniz.</string>
+    <string name="payment_number_error">Kart numarasını giriniz.</string>
+    <string name="payment_expirydate_error">Kart son kullanma tarihini giriniz.</string>
+    <string name="payment_securitycode_error">Kart güvenlik kodunu giriniz.</string>
+
+    <string name="edit">Düzenle</string>
+    <string name="delete">Sil</string>
+
+    <string name="menu">Menü</string>
+    <string name="my_account">Hesabım</string>
+    <string name="my_profile">Üyelik Bilgilerim</string>
+    <string name="my_driving_license_info">Ehliyet Bilgilerim</string>
+    <string name="my_billing_info">Fatura Bilgilerim</string>
+    <string name="my_payment_method_info">Ödeme Yöntemlerim</string>
+    <string name="my_membership_info">Aşağıda <font color="#FF1100"><b><u>uyarı</u></b></font> simgesi ile işaretlenmiş bilgileri doldurarak üyelik sürecini tamamlayabilirsin. 😉</string>
+    <string name="my_payment_method">Ödeme bilgileriniz sadece telefonunuzda depolanmaktadır. Kesinlikle başka bir yerde <font color="#FF1100"><b>depolanmamakta ve paylaşılmamaktadır.</b></font></string>
+    <string name="contact">İletişim</string>
+    <string name="call_us">Bizi Arayın</string>
+    <string name="want_a_feature">Bir Özellik İsteyin</string>
+
+    <string name="terms_conditions">Şartlar &amp; Koşullar</string>
+    <string name="privacy_policy">Gizlilik Politikası</string>
+    <string name="protection_personal_data">Kişisel Verilerin Korunması</string>
+    <string name="terms_of_use">Kullanım Koşulları</string>
+
+    <string name="settings">Ayarlar</string>
+    <string name="language">Dil Seç</string>
+    <string name="language_turkish">Turkish</string>
+    <string name="language_english">English</string>
+    <string name="language_deutsch">Deutsch</string>
+    <string name="currency_3">Para Birimi Seç</string>
+    <string name="about_filozilla">Hakkımızda</string>
+
+    <string name="content_desc_detail">Detaylar</string>
+
+    <string name="content_desc_facebook">Facebook</string>
+    <string name="content_desc_twitter">Twitter</string>
+    <string name="content_desc_youtube">YouTube</string>
+    <string name="content_desc_linkedin">Linkedin</string>
+
+    <string name="notifications">Bildirimler</string>
+    <string name="sign_out">Çıkış Yap</string>
+
+    <string name="daily_rental">Günlük Kiralama</string>
+    <string name="monthly_rental">Aylık Kiralama</string>
+
+    <string name="pickup_hint">İl, ilçe ya da havalimanı</string>
+    <string name="dropoff_text">Bırakış Yeri</string>
+    <string name="different_place">Aracı farklı bir yerde bırak.</string>
+    <string name="pickup_dropoff_back">Alış ve Bırakış Yeri</string>
+    <string name="pickup_dropoff_date">Alış ve Bırakış Tarihi</string>
+    <string name="day_click_error">Bu tarih seçilmek için uygun değil.</string>
+    <string name="day_compare_error">Tarih karşılaştırması yapılırken hata meydana geldi.</string>
+    <string name="pickup">Alış</string>
+    <string name="dropoff">Bırakış</string>
+    <string name="pickup_dropoff_time">12:00</string>
+    <string name="pickup_time">Alış Saati:</string>
+    <string name="dropoff_time">Bırakış Saati:</string>
+    <string name="pickup_dropoff_date2">Alış Tarihi</string>
+    <string name="daily_date_range_error">Lütfen kiralama tarihinizi seçiniz.</string>
+    <string name="daily_time_range_error">Bırakış saati ile alış saatiniz arasında en az 30 dakika olmalıdır.</string>
+    <string name="daily_date_range_info">Saatlik kiralama yapmak istiyorsanız, tarihler arasından bir kez seçim yapınız.</string>
+    <string name="age_range">Yaşınız 21 yaş ve altı mı?</string>
+    <string name="promotion_code_hint">Hediye Çeki</string>
+    <string name="promotion_code_text">Hediye çekim var.</string>
+    <string name="car">Araç Önizleme</string>
+    <string name="find_car">ARAÇ ARA</string>
+
+    <string name="success_dialog_desc">Üyelik bilgileriniz başarıyla kaydedildi.</string>
+    <string name="success_dialog_desc2">Ehliyet bilgileriniz başarıyla kaydedildi.</string>
+    <string name="success_dialog_desc3">Fatura bilgileriniz başarıyla kaydedildi.</string>
+    <string name="daily_warning_dialog_desc">Lütfen günlük kiralamada istenilen <font color="#FF1100"><i>zorunlu</i></font> bilgileri giriniz.</string>
+    <string name="monthly_warning_dialog_desc">Lütfen aylık kiralamada istenilen <font color="#FF1100"><i>zorunlu</i></font> bilgileri giriniz.</string>
+    <string name="warning_dialog_desc">Lütfen bilgilerinizi <font color="#FF1100"><i>eksiksiz</i></font> olarak giriniz.</string>
+    <string name="warning_dialog_desc_2">Lütfen mevcut şifrenizi <font color="#FF1100"><i>doğru ve en az 6 karakter</i></font> olarak giriniz.</string>
+    <string name="warning_dialog_desc_3">Lütfen yeni şifrenizi <font color="#FF1100"><i>doğru ve en az 6 karakter</i></font> olarak giriniz.</string>
+    <string name="warning_dialog_desc_4">Ehliyet bilgileriniz kaydedilirken hata meydana geldi.</string>
+    <string name="warning_dialog_desc_5">Lütfen ehliyet bilgilerinizi <font color="#FF1100"><i>doğru ve eksiksiz</i></font> giriniz.</string>
+    <string name="warning_dialog_desc_6">Fatura bilgileriniz kaydedilirken hata meydana geldi.</string>
+    <string name="warning_dialog_desc_7">Lütfen mevcut şifrenizi doğru olarak giriniz.</string>
+    <string name="failure_dialog_desc">Bilgileriniz güncellenirken hata meydana geldi.</string>
+
+    <string name="warning_change_pw">Şifreniz başarıyla güncellendi.</string>
+    <string name="warning_change_pw2">Şifreniz güncellenirken hata meydana geldi.</string>
+
+    <string name="warning_phone_desc">Telefon numaranızı giriniz</string>
+    <string name="warning_country_desc">Ülkenizi giriniz</string>
+    <string name="warning_city_desc">İlinizi giriniz</string>
+    <string name="warning_county_desc">İlçenizi giriniz</string>
+    <string name="warning_address_desc">Adresinizi giriniz</string>
+    <string name="warning_postcode_desc">Posta kodunuzu giriniz</string>
+
+    <string name="warning_dialog_action">TAMAM</string>
+
+    <string name="bg_content_desc">Introduction Photos</string>
+
+    <string name="time_picker_title">Saat Aralığı Seçiniz</string>
+    <string name="time_picker_pickup">Alış:</string>
+    <string name="time_picker_dropoff">Bırakış:</string>
+    <string name="month_picker_title">Ay Seçiniz</string>
+    <string name="short_term">Kısa Dönem</string>
+    <string name="one_month">1 AY</string>
+    <string name="two_month">2 AY</string>
+    <string name="three_month">3 AY</string>
+    <string name="four_month">4 AY</string>
+    <string name="five_month">5 AY</string>
+    <string name="six_month">6 AY</string>
+    <string name="long_term">Uzun Dönem</string>
+    <string name="twelve_month">12 AY</string>
+    <string name="twenty_four_month">24 AY</string>
+    <string name="thirty_six_month">36 AY</string>
+
+    <string name="location">Konum</string>
+
+    <string name="filozilla_campaigns">Filozilla Kampanyaları 👇</string>
+    <string name="fleet_campaigns">Firma Kampanyaları 👇</string>
+    <string name="content_desc_bg">Kampanya Görseli</string>
+    <string name="details"><u>Detaylar</u></string>
+
+    <string name="request_a_feature">Bir Özellik İsteyin</string>
+    <string name="request_a_feature_desc">Uygulamayla ilgili geri dönüşünü ve isteyebileceğin ekstra özellikleri bize iletebilir ve uygulamanın gelişmesine katkıda bulunabilirsin.</string>
+
+    <string name="et_request_feature_hint">Görüşlerinizi bildirin…</string>
+    <string name="et_request_feature_cancel">İPTAL</string>
+    <string name="et_request_feature_send">GÖNDER</string>
+
+    <string name="account_creation_date">Üyelik Oluşturma Tarihi:</string>
+    <string name="enter_name_lastname2">Ad ve soyad giriniz</string>
+    <string name="enter_date_of_birth">Doğum tarihinizi giriniz</string>
+    <string name="tckn">TCKN</string>
+    <string name="passport">Pasaport no</string>
+    <string name="enter_tckn_passport">TCKN/Pasaport giriniz</string>
+
+    <string name="membership_info">Üyelik Bilgilerim</string>
+    <string name="enter_email">E-posta giriniz</string>
+    <string name="enter_phone_number">Telefon no giriniz</string>
+    <string name="change_pw">Şifremi Değiştir</string>
+    <string name="current_pw">Mevcut şifrenizi giriniz</string>
+    <string name="new_pw">Yeni şifrenizi giriniz</string>
+    <string name="new_re_pw">Yeni şifrenizi tekrar giriniz</string>
+
+    <string name="billing_info_error">Bilgiler yüklenirken hata meydana geldi. Lütfen daha sonra tekrar deneyiniz.</string>
+
+    <string name="choose_country">Ülke Seçiniz</string>
+    <string name="choose_city">İl Seçiniz</string>
+    <string name="choose_county">İlçe Seçiniz</string>
+    <string name="entry_address" tools:ignore="Typos">Adres giriniz</string>
+    <string name="entry_postcode">Posta kodu giriniz</string>
+
+    <string name="success_security_code">Güvenlik kodu e-posta adresinize başarıyla gönderildi.</string>
+    <string name="error_occured_security_code">Güvenlik kodu e-posta adresinize yollanırken hata meydana geldi.</string>
+    <string name="not_security_code">Güvenlik kodu e-posta adresinize gönderilemedi.</string>
+    <string name="resend">Yeniden Gönder</string>
+    <string name="error_security_code">"Güvenlik kodunu hatalı girdiniz."</string>
+    <string name="multi_error_security_code">"Çok sayıda hatalı giriş yaptığınızdan işleminiz iptal edildi."</string>
+    <string name="back_repw">Şifre yenileme ekranına dönmek istediğinize emin misiniz ?</string>
+    <string name="okay">TAMAM</string>
+    <string name="close2">"ÇIK"</string>
+
+    <string name="financial_info">Finansal Bilgilerim</string>
+
+    <string name="invoice_info">Fatura Bilgilerim</string>
+    <string name="enter_province">İl giriniz…</string>
+    <string name="enter_address" tools:ignore="Typos">Adres giriniz…</string>
+    <string name="enter_postal_code">Posta kodu giriniz…</string>
+
+    <string name="contact_info">İletişim Tercihlerim</string>
+    <string name="contact_info_desc">İletişim tercihlerini ayarlayarak <font color = "#202023">kampanyalardan</font> haberdar olabilirsin. 🥳</string>
+    <string name="contact_via_email">E-Posta yoluyla bilgi al.</string>
+    <string name="contact_via_sms">SMS yoluyla bilgi al.</string>
+    <string name="contact_via_phone">Telefon görüşmesiyle bilgi al.</string>
+
+    <string name="delete_account">Üyeliğimi Sil</string>
+    <string name="delete_account2">ÜYELİĞİMİ SİL</string>
+    <string name="delete_account_desc">Üyeliğinizi sildiğinizde hesabınıza ait tüm veriler <b>kaybolacaktır</b>. Üyeliğinizi silmek istediğinize emin misiniz?</string>
+    <string name="delete_account_option">Uygulamaya artık ihtiyacım kalmadı.</string>
+    <string name="delete_account_option2">Filo sayısını yetersiz buldum.</string>
+    <string name="delete_account_option3">Filozilla\'da kiralamak istediğim aracı bulamadım.</string>
+    <string name="delete_account_option4">Yeni bir hesap oluşturacağım.</string>
+    <string name="delete_account_option5">Diğer</string>
+    <string name="other_hint">Lütfen açıklayınız…</string>
+    <string name="delete_account_unchosen">Lütfen Filozilla hesabınızı silme nedeninizi açıklayınız.</string>
+    <string name="btn_delete_account">ÜYELİĞİMİ SİL</string>
+
+    <string name="delete_account_error">Üyeliğiniz silinirken hata meydana geldi.</string>
+    <string name="delete_account_success">Üyeliğinize dair tüm veriler başarıyla silindi.</string>
+
+    <string name="feedback_send">GÖNDER</string>
+
+    <string name="driving_license_number">Ehliyet numarasını giriniz</string>
+    <string name="driving_license_class">Ehliyet Sınıfı</string>
+    <string name="pls_choose">"Lütfen seçiniz"</string>
+    <string name="driving_license_pickup">Ehliyet alış yerini giriniz</string>
+    <string name="driving_license_issue_date">Ehliyet veriliş tarihini giriniz</string>
+
+    <string name="driving_license_b">B</string>
+    <string name="driving_license_c">C</string>
+    <string name="driving_license_d">D</string>
+    <string name="driving_license_e">E</string>
+    <string name="driving_license_usb">USB</string>
+
+    <string name="jan">January</string>
+    <string name="feb">February</string>
+    <string name="mar">March</string>
+    <string name="apr">April</string>
+    <string name="may">May</string>
+    <string name="jun">June</string>
+    <string name="jul">July</string>
+    <string name="aug">August</string>
+    <string name="sep">September</string>
+    <string name="oct">October</string>
+    <string name="nov">November</string>
+    <string name="dec">December</string>
+
+    <string name="monday">MON</string>
+    <string name="tuesday">TUE</string>
+    <string name="wednesday">WED</string>
+    <string name="thursday">THU</string>
+    <string name="friday">FRI</string>
+    <string name="saturday">SAT</string>
+    <string name="sunday">SUN</string>
+
+    <string name="sort">Sırala</string>
+    <string name="currency">Para B.</string>
+    <string name="currency_2">Para Birimi</string>
+    
+    <string name="custom_comments"><u>1050 Yorum</u></string>
+    <string name="booking">Rezervasyon Oluştur</string>
+
+    <string name="travel">TRAVEL</string>
+    <string name="travel_desc">Yolcu olarak, yolculuğunu paylaşmak istediğin sürücüyü tercih ettikten sonra koltuğunu online olarak rezerve edebilir ve istersen yolculuk öncesinde sürücüye mesaj atabilirsin. Koltuk başına düşen masraf katkı payını sürücüye nakit olarak araç içinde ödersin.</string>
+
+    <string name="change_app">GEÇİŞ YAP</string>
+
+    <string name="aboutapp"><font color = "#2C5098"><b>Filozilla</b></font>, filolar ile araç kiralamak isteyen müşterileri tek bir platformda buluşturarak her iki tarafın da teklif, sözleşme, tutanak gibi evrakları yüz yüze görüşerek tamamlamak yerine tamamen dijital bir şekilde gerçekleştirmeyi misyon edinen 2023 yılında kurulmuş bir anonim şirketidir. Tüm hakları saklıdır.</string>
+    <string name="aboutapp2">Sürüm: <b>1.0</b></string>
+
+</resources>

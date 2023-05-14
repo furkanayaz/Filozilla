@@ -1,0 +1,1336 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="fragmentOtherObject"
+            type="com.filozilla.fragments.OtherFragment" />
+
+        <variable
+            name="accountDetailVisibility"
+            type="Boolean" />
+
+        <variable
+            name="contactDetailVisibility"
+            type="Boolean" />
+
+        <variable
+            name="contractDetailVisibility"
+            type="Boolean" />
+
+        <variable
+            name="settingsDetailVisibility"
+            type="Boolean" />
+
+        <variable
+            name="aboutAppDetailVisibility"
+            type="Boolean" />
+        <variable
+            name="chosenLanguage"
+            type="String" />
+        <variable
+            name="chosenCurrency"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clOtherRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <ScrollView
+            android:id="@+id/svOther"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scrollbarThumbVertical="@color/yellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSvOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clOtherTop"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivOtherTop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="24dp"
+                        android:contentDescription="@string/app_name"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5"
+                        app:srcCompat="@drawable/filozilla_top" />
+
+                    <View
+                        android:id="@+id/dividerOtherTop"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@color/divider_color"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clOtherBody"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clOtherTop">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clOtherMyAccountHolder"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/cl_other_bg"
+                        android:clickable="true"
+                        android:elevation="10dp"
+                        android:focusable="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clOtherMyAccount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clOtherMyAccountHead"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:onClick="@{() -> fragmentOtherObject.myAccountOnClick()}"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/ivOtherMyAccountIcon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:contentDescription="@string/icon"
+                                    android:src="@{accountDetailVisibility ? @drawable/user_circle2 : @drawable/user_circle}"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvOtherMyAccount"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginEnd="12dp"
+                                    android:fontFamily="@font/sofiaprosemibold"
+                                    android:text="@string/my_account"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@{accountDetailVisibility ? @color/second_color : @color/text_color}"
+                                    android:textSize="15sp"
+                                    app:layout_constraintEnd_toStartOf="@+id/ivOtherMyAccountDetail"
+                                    app:layout_constraintStart_toEndOf="@+id/ivOtherMyAccountIcon"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/ivOtherMyAccountDetail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="12dp"
+                                    android:animateLayoutChanges="true"
+                                    android:contentDescription="@string/icon"
+                                    android:padding="4dp"
+                                    android:src="@{accountDetailVisibility ? @drawable/plus2 : @drawable/plus}"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clOtherMembershipInfo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="48dp"
+                                android:layout_marginEnd="12dp"
+                                android:background="?selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:onClick="@{() -> fragmentOtherObject.membershipInfoOnClick()}"
+                                android:visibility="@{accountDetailVisibility ? View.VISIBLE : View.GONE}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/clOtherMyAccountHead">
+
+                                <View
+                                    android:id="@+id/dividerOtherEditProfile"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:background="@color/divider_color"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvOtherEditProfile"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="16dp"
+                                    android:fontFamily="@font/sofiaproregular"
+                                    android:text="@string/my_profile"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="14sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="@+id/ivOtherEditProfileWarning"
+                                    app:layout_constraintEnd_toStartOf="@+id/ivOtherEditProfileWarning"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/ivOtherEditProfileWarning"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="16dp"
+                                    android:contentDescription="@string/icon"
+                                    android:visibility="gone"
+                                    app:layout_constraintBottom_toTopOf="@+id/dividerOtherEditProfile2"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/dividerOtherEditProfile"
+                                    app:srcCompat="@drawable/warning" />
+
+                                <View
+                                    android:id="@+id/dividerOtherEditProfile2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="16dp"
+                                    android:background="@color/divider_color"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tvOtherEditProfile" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clOtherDrivingLicenseInfo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="48dp"
+                                android:layout_marginEnd="12dp"
+                                android:background="?selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:onClick="@{() -> fragmentOtherObject.drivingLicenseInfoOnClick()}"
+                                android:visibility="@{accountDetailVisibility ? View.VISIBLE : View.GONE}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/clOtherMembershipInfo">
+
+                                <TextView
+                                    android:id="@+id/tvOtherAddress"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="16dp"
+                                    android:fontFamily="@font/sofiaproregular"
+                                    android:text="@string/my_driving_license_info"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="14sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="@+id/ivOtherAddressWarning"
+                                    app:layout_constraintEnd_toStartOf="@+id/ivOtherAddressWarning"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/ivOtherAddressWarning"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="16dp"
+                                    android:contentDescription="@string/icon"
+                                    android:visibility="gone"
+                                    app:layout_constraintBottom_toTopOf="@+id/dividerOtherAddress2"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:srcCompat="@drawable/warning" />
+
+                                <View
+                                    android:id="@+id/dividerOtherAddress2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="16dp"
+                                    android:background="@color/divider_color"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tvOtherAddress" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clOtherBillingInfo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="48dp"
+                                android:layout_marginEnd="12dp"
+                                android:background="?selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:onClick="@{() -> fragmentOtherObject.billingInfoOnClick()}"
+                                android:visibility="@{accountDetailVisibility ? View.VISIBLE : View.GONE}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/clOtherDrivingLicenseInfo">
+
+                                <TextView
+                                    android:id="@+id/tvOtherDrivingLicense"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="16dp"
+                                    android:fontFamily="@font/sofiaproregular"
+                                    android:text="@string/my_billing_info"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="14sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/ivOtherDrivingLicenseWarning"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="16dp"
+                                    android:contentDescription="@string/icon"
+                                    android:visibility="gone"
+                                    app:layout_constraintBottom_toTopOf="@+id/dividerOtherDrivingLicense2"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:srcCompat="@drawable/warning" />
+
+                                <View
+                                    android:id="@+id/dividerOtherDrivingLicense2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="16dp"
+                                    android:background="@color/divider_color"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tvOtherDrivingLicense" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clOtherPaymentMethod"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="48dp"
+                                android:layout_marginEnd="12dp"
+                                android:background="?selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:onClick="@{() -> fragmentOtherObject.paymentMethodOnClick()}"
+                                android:visibility="@{accountDetailVisibility ? View.VISIBLE : View.GONE}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/clOtherBillingInfo">
+
+                                <TextView
+                                    android:id="@+id/tvOtherPaymentMethod"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="16dp"
+                                    android:fontFamily="@font/sofiaproregular"
+                                    android:text="@string/my_payment_method_info"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="14sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/ivOtherPaymentMethodWarning"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="16dp"
+                                    android:contentDescription="@string/icon"
+                                    android:visibility="gone"
+                                    app:layout_constraintBottom_toTopOf="@+id/dividerOtherPaymentMethod2"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:srcCompat="@drawable/warning" />
+
+                                <View
+                                    android:id="@+id/dividerOtherPaymentMethod2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="16dp"
+                                    android:background="@color/divider_color"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tvOtherPaymentMethod" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clOtherSignOut"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="48dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginBottom="16dp"
+                                android:background="?selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:onClick="@{() -> fragmentOtherObject.signOutOnClick()}"
+                                android:visibility="@{accountDetailVisibility ? View.VISIBLE : View.GONE}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/clOtherPaymentMethod">
+
+                                <TextView
+                                    android:id="@+id/tvOtherSignOut"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="16dp"
+                                    android:fontFamily="@font/sofiaproregular"
+                                    android:text="@string/sign_out"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="14sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <View
+                                    android:id="@+id/dividerOtherSignOut"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="16dp"
+                                    android:background="@color/divider_color"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tvOtherSignOut" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clOtherContactHolder"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/cl_other_bg"
+                        android:clickable="true"
+                        android:elevation="10dp"
+                        android:focusable="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/clOtherMyAccountHolder">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clOtherContact"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clOtherContactHead"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:onClick="@{() -> fragmentOtherObject.contactOnClick()}"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/ivOtherContactIcon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:contentDescription="@string/icon"
+                                    android:src="@{contactDetailVisibility ? @drawable/call2 : @drawable/call}"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvOtherContact"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginEnd="16dp"
+                                    android:fontFamily="@font/sofiaprosemibold"
+                                    android:text="@string/contact"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@{contactDetailVisibility ? @color/second_color : @color/text_color}"
+                                    android:textSize="14sp"
+                                    app:layout_constraintEnd_toStartOf="@+id/ivOtherContactDetail"
+                                    app:layout_constraintStart_toEndOf="@+id/ivOtherContactIcon"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/ivOtherContactDetail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="12dp"
+                                    android:animateLayoutChanges="true"
+                                    android:contentDescription="@string/icon"
+                                    android:padding="4dp"
+                                    android:src="@{contactDetailVisibility ? @drawable/plus2 : @drawable/plus}"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clOtherContactPhone"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="48dp"
+                                android:layout_marginEnd="12dp"
+                                android:background="?selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:onClick="@{() -> fragmentOtherObject.callUsOnClick()}"
+                                android:visibility="@{contactDetailVisibility ? View.VISIBLE : View.GONE}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/clOtherContactHead">
+
+                                <View
+                                    android:id="@+id/dividerOtherContactPhone"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:background="@color/divider_color"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvOtherContactPhone"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="16dp"
+                                    android:fontFamily="@font/sofiaproregular"
+                                    android:text="@string/call_us"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="14sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <View
+                                    android:id="@+id/dividerOtherContactPhone2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:background="@color/divider_color"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clOtherContactApp"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="48dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginBottom="16dp"
+                                android:background="?selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:onClick="@{() -> fragmentOtherObject.requestFeatureOnClick()}"
+                                android:visibility="@{contactDetailVisibility ? View.VISIBLE : View.GONE}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/clOtherContactPhone">
+
+                                <TextView
+                                    android:id="@+id/tvOtherContactApp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="16dp"
+                                    android:fontFamily="@font/sofiaproregular"
+                                    android:text="@string/want_a_feature"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="14sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <View
+                                    android:id="@+id/dividerOtherContactApp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:background="?android:attr/listDivider"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clOtherContractHolder"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/cl_other_bg"
+                        android:clickable="true"
+                        android:elevation="10dp"
+                        android:focusable="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/clOtherContactHolder">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clOtherContract"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clOtherContractHead"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:onClick="@{() -> fragmentOtherObject.contractOnClick()}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/ivOtherContractIcon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:contentDescription="@string/icon"
+                                    android:src="@{contractDetailVisibility ? @drawable/book2 : @drawable/book}"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvOtherContract"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginEnd="12dp"
+                                    android:fontFamily="@font/sofiaprosemibold"
+                                    android:text="@string/terms_conditions"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@{contractDetailVisibility ? @color/second_color : @color/text_color}"
+                                    android:textSize="15sp"
+                                    app:layout_constraintEnd_toStartOf="@+id/ivOtherContractDetail"
+                                    app:layout_constraintStart_toEndOf="@+id/ivOtherContractIcon"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/ivOtherContractDetail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="12dp"
+                                    android:animateLayoutChanges="true"
+                                    android:contentDescription="@string/icon"
+                                    android:padding="4dp"
+                                    android:src="@{contractDetailVisibility ? @drawable/plus2 : @drawable/plus}"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clOtherContractPrivacyPolicy"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="48dp"
+                                android:layout_marginEnd="12dp"
+                                android:background="?selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:onClick="@{() -> fragmentOtherObject.privacyPolicyOnClick()}"
+                                android:visibility="@{contractDetailVisibility ? View.VISIBLE : View.GONE}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/clOtherContractHead">
+
+                                <View
+                                    android:id="@+id/dividerOtherPrivacyPolicy"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:background="@color/divider_color"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvOtherPrivacyPolicy"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="16dp"
+                                    android:fontFamily="@font/sofiaproregular"
+                                    android:text="@string/privacy_policy"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="14sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <View
+                                    android:id="@+id/dividerOtherPrivacyPolicy2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:background="@color/divider_color"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clOtherContractProtectPersonalData"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="48dp"
+                                android:layout_marginEnd="12dp"
+                                android:background="?selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:onClick="@{() -> fragmentOtherObject.personalDataOnClick()}"
+                                android:visibility="@{contractDetailVisibility ? View.VISIBLE : View.GONE}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/clOtherContractPrivacyPolicy">
+
+                                <TextView
+                                    android:id="@+id/tvOtherProtectPersonalData"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="16dp"
+                                    android:fontFamily="@font/sofiaproregular"
+                                    android:text="@string/protection_personal_data"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="14sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <View
+                                    android:id="@+id/dividerOtherProtectPersonalData"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:background="@color/divider_color"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clOtherContractTermsOfUse"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="48dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginBottom="16dp"
+                                android:background="?selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:onClick="@{() -> fragmentOtherObject.termsOfUseOnClick()}"
+                                android:visibility="@{contractDetailVisibility ? View.VISIBLE : View.GONE}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/clOtherContractProtectPersonalData">
+
+                                <TextView
+                                    android:id="@+id/tvOtherTermsOfUse"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="16dp"
+                                    android:fontFamily="@font/sofiaproregular"
+                                    android:text="@string/terms_of_use"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="14sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <View
+                                    android:id="@+id/dividerOtherTermsOfUse"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:background="@color/divider_color"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clOtherSettingsHolder"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/cl_other_bg"
+                        android:clickable="true"
+                        android:elevation="10dp"
+                        android:focusable="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/clOtherContractHolder">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clOtherSettings"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clOtherSettingsHead"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:onClick="@{() -> fragmentOtherObject.settingsOnClick()}"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/ivOtherSettingsIcon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:contentDescription="@string/icon"
+                                    android:src="@{settingsDetailVisibility ? @drawable/settings2 : @drawable/settings}"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:ignore="TooManyViews" />
+
+                                <TextView
+                                    android:id="@+id/tvOtherSettings"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginEnd="16dp"
+                                    android:fontFamily="@font/sofiaprosemibold"
+                                    android:text="@string/settings"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@{settingsDetailVisibility ? @color/second_color : @color/text_color}"
+                                    android:textSize="15sp"
+                                    app:layout_constraintEnd_toStartOf="@+id/ivOtherSettingsDetail"
+                                    app:layout_constraintStart_toEndOf="@+id/ivOtherSettingsIcon"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/ivOtherSettingsDetail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="12dp"
+                                    android:animateLayoutChanges="true"
+                                    android:contentDescription="@string/icon"
+                                    android:padding="4dp"
+                                    android:src="@{settingsDetailVisibility ? @drawable/plus2 : @drawable/plus}"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:ignore="TooManyViews" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clOtherSettingsLanguage"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="48dp"
+                                android:layout_marginEnd="12dp"
+                                android:background="?selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:onClick="@{() -> fragmentOtherObject.languageOnClick()}"
+                                android:visibility="@{settingsDetailVisibility ? View.VISIBLE : View.GONE}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/clOtherSettingsHead">
+
+                                <View
+                                    android:id="@+id/dividerOtherLanguage"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:background="@color/divider_color"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvOtherLanguage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="16dp"
+                                    android:fontFamily="@font/sofiaproregular"
+                                    android:gravity="start"
+                                    android:text="@string/language"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="14sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/tvOtherChosenLanguage"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvOtherChosenLanguage"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="16dp"
+                                    android:fontFamily="@font/sofiaprolight"
+                                    android:gravity="start"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/hint_color4"
+                                    android:textSize="12sp"
+                                    android:text="@{chosenLanguage}"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toEndOf="@+id/tvOtherLanguage"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <View
+                                    android:id="@+id/dividerOtherLanguage2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:background="@color/divider_color"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clOtherSettingsCurrency"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="48dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginBottom="16dp"
+                                android:background="?selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:onClick="@{() -> fragmentOtherObject.currencyOnClick()}"
+                                android:visibility="@{settingsDetailVisibility ? View.VISIBLE : View.GONE}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/clOtherSettingsLanguage">
+
+                                <TextView
+                                    android:id="@+id/tvOtherCurrency"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="16dp"
+                                    android:fontFamily="@font/sofiaproregular"
+                                    android:text="@string/currency_3"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="14sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/tvOtherChosenCurrency"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvOtherChosenCurrency"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="16dp"
+                                    android:fontFamily="@font/sofiaprolight"
+                                    android:gravity="start"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/hint_color4"
+                                    android:textSize="12sp"
+                                    android:text="@{chosenCurrency}"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toEndOf="@+id/tvOtherCurrency"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <View
+                                    android:id="@+id/dividerOtherCurrency"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:background="@color/divider_color"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clOtherAboutHolder"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/cl_other_bg"
+                        android:clickable="true"
+                        android:elevation="10dp"
+                        android:focusable="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/clOtherSettingsHolder">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clOtherAbout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clOtherAboutHead"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:onClick="@{() -> fragmentOtherObject.aboutAppOnClick()}"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/ivOtherAboutIcon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:contentDescription="@string/icon"
+                                    android:src="@{aboutAppDetailVisibility ? @drawable/android2 : @drawable/android}"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvOtherAbout"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginEnd="16dp"
+                                    android:fontFamily="@font/sofiaprosemibold"
+                                    android:text="@string/about_filozilla"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@{aboutAppDetailVisibility ? @color/second_color : @color/text_color}"
+                                    android:textSize="15sp"
+                                    app:layout_constraintEnd_toStartOf="@+id/ivOtherAboutDetail"
+                                    app:layout_constraintStart_toEndOf="@+id/ivOtherAboutIcon"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/ivOtherAboutDetail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="12dp"
+                                    android:padding="4dp"
+                                    android:contentDescription="@string/content_desc_detail"
+                                    android:animateLayoutChanges="true"
+                                    android:src="@{aboutAppDetailVisibility ? @drawable/plus2 : @drawable/plus}"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clOtherAboutDetail"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="28dp"
+                                android:layout_marginEnd="28dp"
+                                android:visibility="@{aboutAppDetailVisibility ? View.VISIBLE : View.GONE}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/clOtherAboutHead">
+
+                                <View
+                                    android:id="@+id/dividerOtherAboutBody"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:background="@color/divider_color"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvOtherAboutDetail"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:fontFamily="@font/sofiaproregular"
+                                    android:text="@string/aboutapp"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="14sp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvOtherAboutDetail2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginBottom="16dp"
+                                    android:fontFamily="@font/sofiaproregular"
+                                    android:text="@string/aboutapp2"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="14sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tvOtherAboutDetail" />
+
+                                <View
+                                    android:id="@+id/dividerOtherAboutBody2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:background="@color/divider_color"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/clOtherAboutSocialMedia"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="28dp"
+                                android:layout_marginEnd="28dp"
+                                android:layout_marginBottom="16dp"
+                                android:visibility="@{aboutAppDetailVisibility ? View.VISIBLE : View.GONE}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/clOtherAboutDetail">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/clOtherAboutSocialMediaHolder"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <ImageView
+                                        android:id="@+id/ivOtherAboutFacebook"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_marginBottom="4dp"
+                                        android:background="?selectableItemBackgroundBorderless"
+                                        android:clickable="true"
+                                        android:contentDescription="@string/content_desc_facebook"
+                                        android:focusable="true"
+                                        android:onClick="@{() -> fragmentOtherObject.facebookOnClick()}"
+                                        android:padding="4dp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toStartOf="@+id/ivOtherAboutTwitter"
+                                        app:layout_constraintHorizontal_bias="0.5"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.5"
+                                        app:srcCompat="@drawable/facebook"
+                                        tools:ignore="TooDeepLayout" />
+
+                                    <ImageView
+                                        android:id="@+id/ivOtherAboutTwitter"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_marginBottom="4dp"
+                                        android:background="?selectableItemBackgroundBorderless"
+                                        android:clickable="true"
+                                        android:contentDescription="@string/content_desc_twitter"
+                                        android:focusable="true"
+                                        android:onClick="@{() -> fragmentOtherObject.twitterOnClick()}"
+                                        android:padding="4dp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toStartOf="@+id/ivOtherAboutYoutube"
+                                        app:layout_constraintHorizontal_bias="0.5"
+                                        app:layout_constraintStart_toEndOf="@+id/ivOtherAboutFacebook"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.5"
+                                        app:srcCompat="@drawable/twitter" />
+
+                                    <ImageView
+                                        android:id="@+id/ivOtherAboutYoutube"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_marginBottom="4dp"
+                                        android:background="?selectableItemBackgroundBorderless"
+                                        android:clickable="true"
+                                        android:contentDescription="@string/content_desc_youtube"
+                                        android:focusable="true"
+                                        android:onClick="@{() -> fragmentOtherObject.youtubeOnClick()}"
+                                        android:padding="4dp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toStartOf="@+id/ivOtherAboutLinkedin"
+                                        app:layout_constraintHorizontal_bias="0.5"
+                                        app:layout_constraintStart_toEndOf="@+id/ivOtherAboutTwitter"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.5"
+                                        app:srcCompat="@drawable/youtube" />
+
+                                    <ImageView
+                                        android:id="@+id/ivOtherAboutLinkedin"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_marginBottom="4dp"
+                                        android:background="?selectableItemBackgroundBorderless"
+                                        android:clickable="true"
+                                        android:contentDescription="@string/content_desc_linkedin"
+                                        android:focusable="true"
+                                        android:onClick="@{() -> fragmentOtherObject.linkedinOnClick()}"
+                                        android:padding="4dp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0.5"
+                                        app:layout_constraintStart_toEndOf="@+id/ivOtherAboutYoutube"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.5"
+                                        app:srcCompat="@drawable/linkedin" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <View
+                                    android:id="@+id/dividerOtherAboutSocialMedia2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:background="@color/divider_color"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

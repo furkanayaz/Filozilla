@@ -1,0 +1,10 @@
+[12-Apr-2023 03:15:49 Europe/Istanbul] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry '05464691453' for key 'phonenumber' in /home/fzilla/public_html/webservices/signup.php:23
+Stack trace:
+#0 /home/fzilla/public_html/webservices/signup.php(23): mysqli_query()
+#1 {main}
+  thrown in /home/fzilla/public_html/webservices/signup.php on line 23
+[12-Apr-2023 03:17:01 Europe/Istanbul] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry '05464691453' for key 'phonenumber' in /home/fzilla/public_html/webservices/signup.php:23
+Stack trace:
+#0 /home/fzilla/public_html/webservices/signup.php(23): mysqli_query()
+#1 {main}
+  thrown in /home/fzilla/public_html/webservices/signup.php on line 23

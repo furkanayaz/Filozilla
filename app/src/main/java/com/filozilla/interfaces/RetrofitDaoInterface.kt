@@ -16,6 +16,7 @@ interface RetrofitDaoInterface {
         @Field("pw") pw: String
     ): Call<User>
 
+    // A data class must create. Than @Field annotation must replace to @Body [Urgent!]
     @POST("signup.php")
     @FormUrlEncoded
     fun signUp(
@@ -44,6 +45,7 @@ interface RetrofitDaoInterface {
     @GET("inquiry_counties.php")
     fun inquiryCounties(): Call<CRUD5>
 
+    // A data class must create. Than @Field annotation must replace to @Body [Urgent!]
     @POST("webmailer/src/index.php")
     @FormUrlEncoded
     fun sendEmail(
@@ -74,6 +76,7 @@ interface RetrofitDaoInterface {
     @FormUrlEncoded
     fun updateDrivingInfo(@Field("d_uid") uid: Int, @Field("drivingnumber") drivingNumber: String, @Field("drivingchosenclass") drivingChosenClass: String, @Field("drivingpickup") drivingPickUp: String, @Field("drivingissuedate") drivingIssueDate: String): Call<CRUD>
 
+    // A data class must create. Than @Field annotation must replace to @Body [Urgent!]
     @POST("update_billing_info.php")
     @FormUrlEncoded
     fun updateBillingInfo(

@@ -1,2 +1,1 @@
-# Filozilla
- All details of this project on Medium: https://medium.com/@furkanayaz.dev/filozilla-hakkında-58092b80e5a2
+![filozilla](https://github.com/furkanayaz/Filozilla/assets/59910223/876acbf0-6078-4a3d-8d3f-09629dab85ea)
